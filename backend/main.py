@@ -13,6 +13,7 @@ from api.contacts import router as contacts_router
 from api.campaigns import router as campaigns_router
 from api.scraper import router as scraper_router
 from api.reports import router as reports_router
+from api.import_colleges import router as import_router
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -41,6 +42,7 @@ app.add_middleware(
 )
 
 app.include_router(colleges_router)
+app.include_router(import_router)
 app.include_router(contacts_router)
 app.include_router(campaigns_router)
 app.include_router(scraper_router)

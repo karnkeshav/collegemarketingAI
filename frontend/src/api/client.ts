@@ -9,6 +9,11 @@ export const statesApi = {
 export const collegesApi = {
   list: (params?: Record<string, unknown>) =>
     api.get('/colleges', { params }).then(r => r.data),
+  importCsv: (formData: FormData) =>
+    api.post('/colleges/import', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }).then(r => r.data),
+  templateUrl: () => '/api/colleges/template',
 }
 
 export const contactsApi = {

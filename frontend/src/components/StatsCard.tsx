@@ -1,9 +1,9 @@
-import { LucideIcon } from 'lucide-react'
+import type { ComponentType } from 'react'
 
 interface Props {
   title: string
   value: number | string
-  icon: LucideIcon
+  icon: ComponentType<{ size?: number; className?: string }>
   color?: string
   sub?: string
 }
